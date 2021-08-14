@@ -2,7 +2,7 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/borankux/fscan/scanner"
+	"github.com/borankux/hydra/scanner"
 	"github.com/fatih/color"
 	"github.com/spf13/cobra"
 )

@@ -1,4 +1,4 @@
-module github.com/borankux/fscan
+module github.com/borankux/hydra
 
 go 1.16
 

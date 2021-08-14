@@ -2,7 +2,7 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/borankux/fscan/helpers"
+	"github.com/borankux/hydra/helpers"
 	"github.com/spf13/cobra"
 	"os"
 )

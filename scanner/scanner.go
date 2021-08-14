@@ -3,7 +3,7 @@ package scanner
 import (
 	"context"
 	"fmt"
-	"github.com/borankux/fscan/redis"
+	"github.com/borankux/hydra/redis"
 	"io/ioutil"
 	"os"
 )
