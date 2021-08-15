@@ -22,14 +22,7 @@ var infoCMD = &cobra.Command{
 			if err != nil {
 				return
 			}
-
 			fmt.Println(diskStat, partitions)
 		}
-		//rdb := redis.GetRedis()
-		//res:= rdb.Info(context.Background(), "Keyspace")
-		//rule := `db[0-9]{0,2}\:keys\=([0-9]+)`
-		//re, _ := regexp.Compile(rule)
-		//found := re.FindStringSubmatch(res.String())[1]
-		//kernal32,_ := syscall.LoadLibrary("kernal32.dll")
 	},
 }

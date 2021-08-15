@@ -1,6 +1,7 @@
 package redis
 
 import (
+	"context"
 	"github.com/go-redis/redis/v8"
 	"time"
 )
@@ -18,4 +19,13 @@ func init() {
 
 func GetRedis() *redis.Client {
 	return rdb
+}
+
+
+func GetTotalKeySpace() int {
+	return int(rdb.DBSize(context.Background()).Val())
+}
+
+func Scan(key string) *redis.ScanCmd{
+	return rdb.Scan(context.Background(), 0, key, 100)
 }

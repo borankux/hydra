@@ -20,7 +20,7 @@ func ScanDir(dir string, verbose bool) ([]File, error) {
 		file := File{}.BuildFromFileInfo(v, dir)
 
 		if verbose {
-			fmt.Println(file.AbsolutePath)
+			fmt.Println(file.AbsolutePath, file.Size())
 		}
 		ret = append(ret, file)
 	}
@@ -36,9 +36,9 @@ func ScanDeep(root string, verbose bool) ([]File, error) {
 		return nil, err
 	}
 	for _, v := range scanned {
-
 		if !verbose {
-			rdb.Set(context.Background(), v.AbsolutePath, 1, 0)
+			//rdb.Set(context.Background(), v.AbsolutePath, 1, 0)
+			rdb.HMSet(context.Background(), v.AbsolutePath, "size",v.Size(), "isdir", v.IsDir())
 		}
 
 		ret = append(ret, v)
