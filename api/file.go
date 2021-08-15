@@ -1,7 +1,6 @@
 package api
 
 import (
-	"fmt"
 	"github.com/dghubble/sling"
 )
 
@@ -26,7 +25,7 @@ func CreateFile(abs string, size uint16, isDir bool) {
 		IsDir:        isDir,
 	}
 
-	receive, err := s.Post("/file/").BodyJSON(file).Receive(nil, nil)
+	_, err := s.Post("/file/").BodyJSON(file).Receive(nil, nil)
 	if err != nil {
 		return 
 	}
